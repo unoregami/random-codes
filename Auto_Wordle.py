@@ -1,3 +1,5 @@
+# NEEDS Wordle_addiction.py to run
+
 # 100 wordle plays * 10 = 20 to 21 average attempts
 # ^^^ improve accuracies if can
 
@@ -6,6 +8,7 @@
 
 # Using combined list of new Letterpress words list and the ol' web2. Average attempts went up to ~ 8.4 to 9.2 attempts/game & ~9.1 attempts/1000 games... not bad
 # BUT, still not up to wordle standards as wordle only has 6 attempts per game.
+# Might try to use the "correct letters, but in the wrong spot" approach :)
 
 import Wordle_Addiction as wrdl
 
@@ -93,12 +96,17 @@ def autoWordle(word, five):
         print(guess)
 
 
-at, w = 0, 0
+
 
 # Custom wordle plays
-inp = ""
+at, w = 0, 0
+# custom word input
+inp = input("")
+
+# random word
+#inp = ""
 while inp != "n":
-    word = wrdl.pickWord(five)
+    word = inp.upper()
     at += autoWordle(word, five)
     w += 1
     inp = input("")
